@@ -12,7 +12,7 @@ export class FlaggedEffects {
 
   load$ = createEffect(() => this.actions$.pipe(
     ofType(FlaggedActions.loadFlagged),
-    mergeMap(({ limit }: { limit?: number }) => this.svc.getFlagged(limit ?? 50).pipe(
+    mergeMap(({ limit, status }: { limit?: number; status?: 'PENDING_REVIEW' | 'APPROVED' | 'REJECTED' }) => this.svc.getFlagged((limit ?? 50), status).pipe(
       map((items: TransactionListItem[]) => FlaggedActions.loadFlaggedSuccess({ items })),
       catchError((err: unknown) => of(FlaggedActions.loadFlaggedFailure({ error: 'Failed to load flagged' })))
     ))

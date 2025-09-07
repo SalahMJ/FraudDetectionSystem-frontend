@@ -1,7 +1,10 @@
 import { createAction, props } from '@ngrx/store';
 import { TransactionListItem } from '../models/types';
 
-export const loadFlagged = createAction('[Flagged] Load', props<{ limit?: number }>());
+export const loadFlagged = createAction(
+  '[Flagged] Load',
+  props<{ limit?: number; status?: 'PENDING_REVIEW' | 'APPROVED' | 'REJECTED' }>()
+);
 export const loadFlaggedSuccess = createAction('[Flagged] Load Success', props<{ items: TransactionListItem[] }>());
 export const loadFlaggedFailure = createAction('[Flagged] Load Failure', props<{ error: string }>());
 

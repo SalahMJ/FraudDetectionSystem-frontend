@@ -17,9 +17,12 @@
             "tsConfig": "tsconfig.app.json",
             "assets": [],
             "styles": [
-              "node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
               "src/styles.css"
-            ]
+            ],
+            "optimization": {
+              "fonts": { "inline": false }
+            }
           }
         },
         "serve": {

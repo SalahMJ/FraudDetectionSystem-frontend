@@ -1,7 +1,54 @@
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", Arial, sans-serif; background: #0b1420; color: #e6eef7; }
-.container { padding: 16px; }
-.card { background: #111a29; border: 1px solid #22324a; border-radius: 12px; padding: 16px; }
-.mat-toolbar { background: #0f1a2b !important; color: #e6eef7 !important; }
-.mat-mdc-card { background: #111a29; color: #e6eef7; }
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", Arial, sans-serif;
+  /* Modern dark gradient background */
+  --bg: #0b1420;
+  --bg-elev: #111a29;
+  --border: #22324a;
+  --text: #e6eef7;
+  --muted: #9fb3c8;
+  --primary: #ff4081; /* pink accent from Material dark theme */
+  --accent: #82b1ff; /* blue-grey accent */
+  --success: #2e7d32;
+  --warn: #ed6c02;
+  --error: #c62828;
+  background: radial-gradient(1200px 800px at 20% -10%, rgba(130,177,255,0.15), transparent 60%),
+              radial-gradient(1000px 700px at 110% 10%, rgba(255,64,129,0.12), transparent 60%),
+              var(--bg);
+  color: var(--text);
+}
+
+.container {
+  padding: 16px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.card { background: var(--bg-elev); border: 1px solid var(--border); border-radius: 12px; padding: 16px; }
+.mat-toolbar { background: #0f1a2b !important; color: var(--text) !important; border-bottom: 1px solid var(--border); }
+.mat-mdc-card { background: var(--bg-elev); color: var(--text); }
 .table-wrap { overflow: auto; }
+
+/* Utility */
+.muted { color: var(--muted); }
+.spacer { flex: 1 1 auto; }
+
+/* Chips for statuses */
+.status-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  font-size: 12px;
+}
+.status-pending { background: rgba(237, 108, 2, 0.12); color: #ffb74d; }
+.status-approved { background: rgba(46, 125, 50, 0.12); color: #81c784; }
+.status-rejected { background: rgba(198, 40, 40, 0.12); color: #ef9a9a; }
+
+/* Tables */
+table { width: 100%; }
+th { color: var(--muted); font-weight: 600; }
+td, th { border-color: var(--border) !important; }
