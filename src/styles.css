@@ -1,0 +1,7 @@
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", Arial, sans-serif; background: #0b1420; color: #e6eef7; }
+.container { padding: 16px; }
+.card { background: #111a29; border: 1px solid #22324a; border-radius: 12px; padding: 16px; }
+.mat-toolbar { background: #0f1a2b !important; color: #e6eef7 !important; }
+.mat-mdc-card { background: #111a29; color: #e6eef7; }
+.table-wrap { overflow: auto; }
