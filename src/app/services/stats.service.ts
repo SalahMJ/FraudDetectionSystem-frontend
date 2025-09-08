@@ -12,4 +12,11 @@ export class StatsService {
   getStats(window: string = '7d') {
     return this.http.get<StatsResponse>(`${API_BASE}/fraud/stats?window=${window}`);
   }
+
+  getAIInsights(prompt: string, window: string = '7d') {
+    return this.http.post<{ window: string; insight: string; chartSpec?: any }>(
+      `${API_BASE}/fraud/stats/ai`,
+      { prompt, window }
+    );
+  }
 }

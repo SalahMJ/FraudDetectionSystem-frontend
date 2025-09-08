@@ -13,7 +13,14 @@ export interface TransactionListItem {
 }
 
 export interface StatsResponse {
-  timeseries: { ts: string; count_fraud: number; count_clean: number }[];
+  timeseries: {
+    ts: string;
+    count_fraud: number;
+    count_clean: number;
+    count_approved?: number;
+    count_pending?: number;
+    count_rejected?: number;
+  }[];
   totals: { fraud_total: number; clean_total: number; pending_total?: number; approved_total?: number; rejected_total?: number };
 }
 
